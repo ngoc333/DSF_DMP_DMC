@@ -73,9 +73,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\OS_DSF_WS\OS_DSF\bin\Debug\AxInterop.FPUSpreadADO.dll</HintPath>
     </Reference>
-    <Reference Include="COM, Version=1.0.6613.15722, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="COM, Version=1.0.7378.15998, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\DSF_Outsole\OS_DSF\bin\debug\COM.dll</HintPath>
+      <HintPath>bin\debug\COM.DLL</HintPath>
     </Reference>
     <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -224,9 +224,7 @@
       <DependentUpon>A1Panel.cs</DependentUpon>
     </Compile>
     <Compile Include="Classlib\A1PanelGraphics.cs" />
-    <Compile Include="Classlib\ComCtl.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Classlib\ComCtl.cs" />
     <Compile Include="Classlib\ComVar.cs" />
     <Compile Include="SampleForm\SampleFrm2.cs">
       <SubType>Form</SubType>

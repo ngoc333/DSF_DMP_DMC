@@ -379,7 +379,7 @@ namespace Smart_FTY
                 _icount++;
                 if (_icount >= 55 )
                 {
-
+                    _icount = 0;
                     DataTable dt = SELECT_KPI_PER();
                     if (dt != null || dt.Rows.Count > 0)
                     {
@@ -392,7 +392,7 @@ namespace Smart_FTY
 
                         timer2.Start();
                     }
-                    _icount = 0;
+                    
                    // _load = false;
                 }
                 
@@ -459,8 +459,8 @@ namespace Smart_FTY
 
                 // createChart2(chart2, "");
 
-                timer2.Start();
-                timer2.Interval = 50;
+                //timer2.Start();
+               // timer2.Interval = 50;
             }
             catch (Exception)
             {
