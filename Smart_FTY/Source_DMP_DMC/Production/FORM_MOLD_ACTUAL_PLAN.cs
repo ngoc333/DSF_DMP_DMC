@@ -132,15 +132,15 @@ namespace Smart_FTY
 
                 if (_status == "DMC")
                 {
-                    iRowHeight = 27;
+                    iRowHeight = 18;
                     iColWidth = 6.5;
-                    iFontSize = 14;
+                    iFontSize = 12;
                 }
                 else
                 {
-                    iRowHeight = 32;
+                    iRowHeight = 20;
                     iColWidth = 9.8;
-                    iFontSize = 15;
+                    iFontSize = 12;
                 }
 
                 axGrid.Reset();
@@ -249,9 +249,9 @@ namespace Smart_FTY
                 //                    , 1);
                 arg_grid.Col = arg_col;
                 arg_grid.Row = arg_row;
-                arg_grid.set_RowHeight(arg_row, 30);
+                arg_grid.set_RowHeight(arg_row, 20);
                 arg_grid.Text = arg_dt.Rows[arg_idt]["MACHINE_NAME"].ToString();
-                arg_grid.Font = new System.Drawing.Font("Calibri", 20, FontStyle.Bold);
+                arg_grid.Font = new System.Drawing.Font("Calibri", 15, FontStyle.Bold);
                 arg_grid.BackColor = Color.DodgerBlue;
                 arg_grid.ForeColor = Color.White;
                 arg_grid.TypeVAlign = TypeVAlignConstants.TypeVAlignCenter;
@@ -565,7 +565,7 @@ namespace Smart_FTY
                 arg_grid.SetCellBorder(arg_icol, arg_irow, arg_icol + 3, arg_irow, CellBorderIndexConstants.CellBorderIndexLeft, 0, CellBorderStyleConstants.CellBorderStyleSolid);
                 arg_grid.SetCellBorder(arg_icol, arg_irow, arg_icol + 2, arg_irow, CellBorderIndexConstants.CellBorderIndexBottom, 0, CellBorderStyleConstants.CellBorderStyleSolid);
 
-                arg_grid.set_RowHeight(arg_irow, 45);
+                arg_grid.set_RowHeight(arg_irow, 30);
 
 
                 arg_grid.Col = arg_icol;
@@ -712,6 +712,9 @@ namespace Smart_FTY
                     if (dt != null && dt.Rows.Count > 0)
                         _dt_layout_DMC = dt;
 
+                    DataTable _dtMachine = SEL_APS_PLAN_ACTUAL("90_1", "Q", "A");
+                    DataTable _dtModel = SEL_APS_PLAN_ACTUAL("90_1", "Q1", "A");
+                    setGridData(_dtMachine, _dtModel);
                     //this.axGrid.Hide();
                     axGrid.Hide();                    
                     //axGridDMP.Hide();
@@ -726,6 +729,10 @@ namespace Smart_FTY
                     if (dt != null && dt.Rows.Count > 0)
                         _dt_layout_DMP = dt;
 
+                    DataTable _dtMachine = SEL_APS_PLAN_ACTUAL("90", "Q", "A");
+                    DataTable _dtModel = SEL_APS_PLAN_ACTUAL("90", "Q1", "A");
+                    setGridData(_dtMachine, _dtModel);
+                    setGridData(_dtMachine, _dtModel);
                     //this.axGridDMP.Hide();
                     //axGridDMP.Hide();                    
                     axGrid.Hide();
@@ -745,6 +752,67 @@ namespace Smart_FTY
             }
             catch (Exception)
             {}
+        }
+
+        private void setGridData(DataTable _dtMachine, DataTable _dtModel)
+        {
+            try
+            {
+                if (_dtMachine != null)
+                {
+                    grdviewMachine.DataSource = _dtMachine.Select("MACHINE_NAME <>'TOTAL'", "MACHINE_NAME").CopyToDataTable();
+                    gvwviewMachine.Columns[2].OwnerBand.Caption = _dtMachine.Rows[0]["MOLD"].ToString();
+                    gvwviewMachine.Columns[3].OwnerBand.Caption = _dtMachine.Rows[0]["INPUT"].ToString();
+                    gvwviewMachine.Columns[4].OwnerBand.Caption = _dtMachine.Rows[0]["BALANCE"].ToString();
+                    gvwviewMachine.Columns[5].OwnerBand.Caption = _dtMachine.Rows[0]["QTY"].ToString();
+                }
+                if (_dtModel != null)
+                {
+                    gridModel.DataSource = _dtModel.Select("SHORT_NAME <>'TOTAL'", "SHORT_NAME").CopyToDataTable();
+                    bandedGridModel.Columns[5].OwnerBand.Caption = _dtModel.Rows[0]["QTY"].ToString();
+                    bandedGridModel.Columns[6].OwnerBand.Caption = _dtModel.Rows[0]["MOLD_INPUT"].ToString();
+                }
+
+                for (int i = 0; i < gvwviewMachine.Columns.Count; i++)
+                {
+
+                    gvwviewMachine.Columns[i].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                    gvwviewMachine.Columns[i].AppearanceCell.Options.UseTextOptions = true;
+                    gvwviewMachine.Columns[i].OptionsColumn.ReadOnly = true;
+                    gvwviewMachine.Columns[i].OptionsColumn.AllowEdit = false;
+                    gvwviewMachine.Columns[i].OptionsFilter.AllowFilter = false;
+                    gvwviewMachine.Columns[i].OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+                    gvwviewMachine.Columns[i].AppearanceCell.Font = new System.Drawing.Font("Calibri", 12, FontStyle.Bold);
+                    
+                    gvwviewMachine.Columns[i].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                }
+
+                for (int i = 0; i < bandedGridModel.Columns.Count; i++)
+                {
+                    bandedGridModel.Columns[i].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                    bandedGridModel.Columns[i].AppearanceCell.Options.UseTextOptions = true;
+                    bandedGridModel.Columns[i].OptionsColumn.ReadOnly = true;
+                    bandedGridModel.Columns[i].OptionsColumn.AllowEdit = false;
+                    bandedGridModel.Columns[i].OptionsFilter.AllowFilter = false;
+                    bandedGridModel.Columns[i].OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+                    bandedGridModel.Columns[i].AppearanceCell.Font = new System.Drawing.Font("Calibri", 12, FontStyle.Bold);
+                    if (i == 0)
+                    {
+                        bandedGridModel.Columns[i].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+                    }
+                    else
+                    {
+                        bandedGridModel.Columns[i].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                    }
+                        
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            
         }
 
         private void autoClick(List<string> arg_list)
@@ -803,7 +871,45 @@ namespace Smart_FTY
             }
         }
 
-    
+        public DataTable SEL_APS_PLAN_ACTUAL(string WH, string TYPE, string NO)
+        {
+            COM.OraDB MyOraDB = new COM.OraDB();
+            System.Data.DataSet ds_ret;
+
+            try
+            {
+                string process_name = "PKG_SPB_MOLD_WMS_V2.SEL_MOLD_PRODUCTION_LAYOUT_DMC";
+
+                MyOraDB.ReDim_Parameter(4);
+                MyOraDB.Process_Name = process_name;
+
+
+                MyOraDB.Parameter_Name[0] = "ARG_WH";
+                MyOraDB.Parameter_Name[1] = "ARG_TYPE";
+                MyOraDB.Parameter_Name[2] = "ARG_NO";
+                MyOraDB.Parameter_Name[3] = "OUT_CURSOR";
+
+                MyOraDB.Parameter_Type[0] = (int)OracleType.VarChar;
+                MyOraDB.Parameter_Type[1] = (int)OracleType.VarChar;
+                MyOraDB.Parameter_Type[2] = (int)OracleType.VarChar;
+                MyOraDB.Parameter_Type[3] = (int)OracleType.Cursor;
+
+                MyOraDB.Parameter_Values[0] = WH;
+                MyOraDB.Parameter_Values[1] = TYPE;
+                MyOraDB.Parameter_Values[2] = NO;
+                MyOraDB.Parameter_Values[3] = "";
+
+                MyOraDB.Add_Select_Parameter(true);
+                ds_ret = MyOraDB.Exe_Select_Procedure();
+
+                if (ds_ret == null) return null;
+                return ds_ret.Tables[process_name];
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
 
         #endregion DB
