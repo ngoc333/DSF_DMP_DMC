@@ -320,7 +320,7 @@
             this.axGrid.Location = new System.Drawing.Point(12, 160);
             this.axGrid.Name = "axGrid";
             this.axGrid.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axGrid.OcxState")));
-            this.axGrid.Size = new System.Drawing.Size(1893, 640);
+            this.axGrid.Size = new System.Drawing.Size(1893, 619);
             this.axGrid.TabIndex = 660;
             // 
             // label2
@@ -823,7 +823,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1920, 1062);
             this.Controls.Add(this.gridModel);
             this.Controls.Add(this.grdviewMachine);
