@@ -22,6 +22,8 @@ namespace Smart_FTY
             this.Name = "FORM_SMT_DMP_DMC_PROD_MONTH";
             this.Text = "FORM_SMT_DMP_DMC_PROD_MONTH";
         }
+        
+        
 
         public static string _sProcess = "DMC";
         public int iCount = 0;
@@ -61,6 +63,45 @@ namespace Smart_FTY
                 MyOraDB.Parameter_Values[0] = ARG_QTYPE;
                 MyOraDB.Parameter_Values[1] = ARG_OP;
                 MyOraDB.Parameter_Values[2] = "";
+
+                MyOraDB.Add_Select_Parameter(true);
+                ds_ret = MyOraDB.Exe_Select_Procedure();
+
+                if (ds_ret == null) return null;
+                return ds_ret.Tables[process_name];
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public DataTable SEL_OS_PROD_MONTH(string ARG_QTYPE, string ARG_YMD, string ARG_OP)
+        {
+            COM.OraDB MyOraDB = new COM.OraDB();
+            DataSet ds_ret;
+
+            try
+            {
+                string process_name = "MES.PKG_SMT_B1.SP_OS_PROD_MONTH_V2";
+
+                MyOraDB.ReDim_Parameter(4);
+                MyOraDB.Process_Name = process_name;
+
+                MyOraDB.Parameter_Name[0] = "V_P_TYPE";
+                MyOraDB.Parameter_Name[1] = "V_P_YMD";
+                MyOraDB.Parameter_Name[2] = "V_P_OP";
+                MyOraDB.Parameter_Name[3] = "OUT_CURSOR";
+
+                MyOraDB.Parameter_Type[0] = (int)OracleType.VarChar;
+                MyOraDB.Parameter_Type[1] = (int)OracleType.VarChar;
+                MyOraDB.Parameter_Type[2] = (int)OracleType.VarChar;
+                MyOraDB.Parameter_Type[3] = (int)OracleType.Cursor;
+
+                MyOraDB.Parameter_Values[0] = ARG_QTYPE;
+                MyOraDB.Parameter_Values[1] = ARG_YMD;
+                MyOraDB.Parameter_Values[2] = ARG_OP;
+                MyOraDB.Parameter_Values[3] = "";
 
                 MyOraDB.Add_Select_Parameter(true);
                 ds_ret = MyOraDB.Exe_Select_Procedure();
@@ -123,7 +164,7 @@ namespace Smart_FTY
         {
             grdView.Refresh();
             DataTable dtsource = null;
-            dtsource = SEL_OS_PROD_MONTH("Q", arg_op);
+            dtsource = SEL_OS_PROD_MONTH("Q", ucMonth.GetValue().ToString(), arg_op);
             formatband();
             grdView.DataSource = dtsource;
             if (dtsource != null && dtsource.Rows.Count > 0)
@@ -150,7 +191,7 @@ namespace Smart_FTY
         private void bindingdatachart(string arg_op)
         {
             DataTable dt = null;
-            dt = SEL_OS_PROD_MONTH("C", arg_op);
+            dt = SEL_OS_PROD_MONTH("C", ucMonth.GetValue().ToString(), arg_op);
             chartSlabtest.DataSource = dt;
             chartSlabtest.Series[0].ArgumentDataMember = "YMD";
             chartSlabtest.Series[0].ValueDataMembers.AddRange(new string[] { "PLAN_QTY" });
@@ -280,6 +321,12 @@ namespace Smart_FTY
                 //FRM_DMP_DMC_PROD_DAILY f = new FRM_DMP_DMC_PROD_DAILY();
                 f.Show();
             }
+        }
+
+        private void uC_MONTH_SELECTION1_ValueChangeEvent(object sender, EventArgs e)
+        {
+            BindingData(_sProcess);
+            bindingdatachart(_sProcess);
         }
     }
 }

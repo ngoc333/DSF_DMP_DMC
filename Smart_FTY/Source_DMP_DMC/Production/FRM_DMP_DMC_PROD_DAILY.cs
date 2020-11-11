@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraBars.Ribbon;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -293,6 +294,7 @@ namespace Smart_FTY
                 Pen pen_vertical = new Pen(Color.Blue, 4F);
                 Pen line = new Pen(Color.White, 3F);
                 bool boBorder = false;
+                if (e.Band == null) return;
                 string[] ls = e.Band.Caption.Split('\n');
 
                 if (e.Band.HasChildren)

@@ -239,7 +239,6 @@
             // 
             // tmr
             // 
-            this.tmr.Enabled = true;
             this.tmr.Interval = 1000;
             this.tmr.Tick += new System.EventHandler(this.tmr_Tick);
             // 

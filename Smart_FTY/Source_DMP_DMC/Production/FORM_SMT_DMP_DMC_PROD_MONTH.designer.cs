@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FORM_SMT_DMP_DMC_PROD_MONTH));
-            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.SecondaryAxisY secondaryAxisY1 = new DevExpress.XtraCharts.SecondaryAxisY();
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel1 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
-            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView1 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel2 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
-            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView2 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
-            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PointSeriesLabel pointSeriesLabel1 = new DevExpress.XtraCharts.PointSeriesLabel();
-            DevExpress.XtraCharts.LineSeriesView lineSeriesView1 = new DevExpress.XtraCharts.LineSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.SecondaryAxisY secondaryAxisY2 = new DevExpress.XtraCharts.SecondaryAxisY();
+            DevExpress.XtraCharts.Series series4 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel3 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
+            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView3 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
+            DevExpress.XtraCharts.Series series5 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel4 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
+            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView4 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
+            DevExpress.XtraCharts.Series series6 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PointSeriesLabel pointSeriesLabel2 = new DevExpress.XtraCharts.PointSeriesLabel();
+            DevExpress.XtraCharts.LineSeriesView lineSeriesView2 = new DevExpress.XtraCharts.LineSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle2 = new DevExpress.XtraCharts.ChartTitle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pnRubber = new Smart_FTY.A1Panel();
@@ -49,6 +49,8 @@
             this.pnEVA = new Smart_FTY.A1Panel();
             this.lblEVA = new System.Windows.Forms.Label();
             this.splitmain = new System.Windows.Forms.SplitContainer();
+            this.pnMonth = new System.Windows.Forms.Panel();
+            this.ucMonth = new Smart_FTY.Source_DMP_DMC.UC.UC_MONTH_SELECTION();
             this.chartSlabtest = new DevExpress.XtraCharts.ChartControl();
             this.grdView = new DevExpress.XtraGrid.GridControl();
             this.gvwView = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
@@ -133,18 +135,19 @@
             this.splitmain.Panel1.SuspendLayout();
             this.splitmain.Panel2.SuspendLayout();
             this.splitmain.SuspendLayout();
+            this.pnMonth.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartSlabtest)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwView)).BeginInit();
             this.SuspendLayout();
@@ -157,9 +160,8 @@
             // lblDate
             // 
             this.lblDate.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.lblDate.Location = new System.Drawing.Point(1668, 0);
-            this.lblDate.Size = new System.Drawing.Size(254, 106);
-            this.lblDate.Text = "2020-08-01\n08:05:38";
+            this.lblDate.Size = new System.Drawing.Size(250, 106);
+            this.lblDate.Text = "2020-11-11\n07:42:07";
             // 
             // cmdYear
             // 
@@ -325,6 +327,7 @@
             // 
             // splitmain.Panel1
             // 
+            this.splitmain.Panel1.Controls.Add(this.pnMonth);
             this.splitmain.Panel1.Controls.Add(this.chartSlabtest);
             // 
             // splitmain.Panel2
@@ -334,38 +337,56 @@
             this.splitmain.SplitterDistance = 613;
             this.splitmain.TabIndex = 17;
             // 
+            // pnMonth
+            // 
+            this.pnMonth.Controls.Add(this.ucMonth);
+            this.pnMonth.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnMonth.Location = new System.Drawing.Point(0, 0);
+            this.pnMonth.Name = "pnMonth";
+            this.pnMonth.Size = new System.Drawing.Size(1904, 52);
+            this.pnMonth.TabIndex = 3;
+            // 
+            // ucMonth
+            // 
+            this.ucMonth.AutoSize = true;
+            this.ucMonth.Location = new System.Drawing.Point(4, 6);
+            this.ucMonth.Name = "ucMonth";
+            this.ucMonth.Size = new System.Drawing.Size(472, 46);
+            this.ucMonth.TabIndex = 0;
+            this.ucMonth.ValueChangeEvent += new System.EventHandler(this.uC_MONTH_SELECTION1_ValueChangeEvent);
+            // 
             // chartSlabtest
             // 
             this.chartSlabtest.AnimationStartMode = DevExpress.XtraCharts.ChartAnimationMode.OnDataChanged;
             this.chartSlabtest.DataBindings = null;
-            xyDiagram1.AxisX.Label.Font = new System.Drawing.Font("Tahoma", 14.25F);
-            xyDiagram1.AxisX.Title.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold);
-            xyDiagram1.AxisX.Title.Text = "Date";
-            xyDiagram1.AxisX.Title.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            xyDiagram1.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisY.Label.Font = new System.Drawing.Font("Tahoma", 12F);
-            xyDiagram1.AxisY.Label.TextPattern = "{V:#,#}";
-            xyDiagram1.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold);
-            xyDiagram1.AxisY.Title.Text = "Quanlity (Prs)";
-            xyDiagram1.AxisY.Title.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            xyDiagram1.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            xyDiagram1.AxisY.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            secondaryAxisY1.AxisID = 0;
-            secondaryAxisY1.Label.Font = new System.Drawing.Font("Tahoma", 12F);
-            secondaryAxisY1.Label.TextPattern = "{V:#,#}";
-            secondaryAxisY1.Name = "Secondary AxisY 1";
-            secondaryAxisY1.Title.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            secondaryAxisY1.Title.Text = "POD";
-            secondaryAxisY1.Title.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            secondaryAxisY1.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            secondaryAxisY1.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            secondaryAxisY1.VisibleInPanesSerializable = "-1";
-            xyDiagram1.SecondaryAxesY.AddRange(new DevExpress.XtraCharts.SecondaryAxisY[] {
-            secondaryAxisY1});
-            this.chartSlabtest.Diagram = xyDiagram1;
-            this.chartSlabtest.Dock = System.Windows.Forms.DockStyle.Fill;
+            xyDiagram2.AxisX.Label.Font = new System.Drawing.Font("Tahoma", 14.25F);
+            xyDiagram2.AxisX.Title.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold);
+            xyDiagram2.AxisX.Title.Text = "Date";
+            xyDiagram2.AxisX.Title.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            xyDiagram2.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram2.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram2.AxisY.Label.Font = new System.Drawing.Font("Tahoma", 12F);
+            xyDiagram2.AxisY.Label.TextPattern = "{V:#,#}";
+            xyDiagram2.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold);
+            xyDiagram2.AxisY.Title.Text = "Quanlity (Prs)";
+            xyDiagram2.AxisY.Title.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            xyDiagram2.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram2.AxisY.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
+            secondaryAxisY2.AxisID = 0;
+            secondaryAxisY2.Label.Font = new System.Drawing.Font("Tahoma", 12F);
+            secondaryAxisY2.Label.TextPattern = "{V:#,#}";
+            secondaryAxisY2.Name = "Secondary AxisY 1";
+            secondaryAxisY2.Title.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            secondaryAxisY2.Title.Text = "POD";
+            secondaryAxisY2.Title.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            secondaryAxisY2.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            secondaryAxisY2.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            secondaryAxisY2.VisibleInPanesSerializable = "-1";
+            xyDiagram2.SecondaryAxesY.AddRange(new DevExpress.XtraCharts.SecondaryAxisY[] {
+            secondaryAxisY2});
+            this.chartSlabtest.Diagram = xyDiagram2;
+            this.chartSlabtest.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.chartSlabtest.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Center;
             this.chartSlabtest.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.TopOutside;
             this.chartSlabtest.Legend.Direction = DevExpress.XtraCharts.LegendDirection.LeftToRight;
@@ -374,52 +395,52 @@
             this.chartSlabtest.Legend.Title.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chartSlabtest.Legend.Title.Text = "Slab Test";
             this.chartSlabtest.Legend.Title.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.chartSlabtest.Location = new System.Drawing.Point(0, 0);
+            this.chartSlabtest.Location = new System.Drawing.Point(0, 50);
             this.chartSlabtest.Name = "chartSlabtest";
-            sideBySideBarSeriesLabel1.Font = new System.Drawing.Font("Tahoma", 10F);
-            sideBySideBarSeriesLabel1.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.Center;
-            sideBySideBarSeriesLabel1.ResolveOverlappingMode = DevExpress.XtraCharts.ResolveOverlappingMode.Default;
-            sideBySideBarSeriesLabel1.TextOrientation = DevExpress.XtraCharts.TextOrientation.BottomToTop;
-            sideBySideBarSeriesLabel1.TextPattern = "{V:#,#}";
-            series1.Label = sideBySideBarSeriesLabel1;
-            series1.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series1.Name = "Plan";
-            sideBySideBarSeriesView1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(240)))));
-            series1.View = sideBySideBarSeriesView1;
-            sideBySideBarSeriesLabel2.Font = new System.Drawing.Font("Tahoma", 10F);
-            sideBySideBarSeriesLabel2.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.Center;
-            sideBySideBarSeriesLabel2.TextOrientation = DevExpress.XtraCharts.TextOrientation.BottomToTop;
-            sideBySideBarSeriesLabel2.TextPattern = "{V:#,#}";
-            series2.Label = sideBySideBarSeriesLabel2;
-            series2.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series2.Name = "Production";
-            sideBySideBarSeriesView2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            series2.View = sideBySideBarSeriesView2;
-            pointSeriesLabel1.Font = new System.Drawing.Font("Tahoma", 10F);
-            pointSeriesLabel1.TextPattern = "{V:#,0.0}";
-            series3.Label = pointSeriesLabel1;
-            series3.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series3.Name = "POD";
-            lineSeriesView1.AxisYName = "Secondary AxisY 1";
-            lineSeriesView1.Color = System.Drawing.Color.OrangeRed;
-            lineSeriesView1.LineMarkerOptions.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(240)))));
-            lineSeriesView1.LineMarkerOptions.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            lineSeriesView1.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series3.View = lineSeriesView1;
+            sideBySideBarSeriesLabel3.Font = new System.Drawing.Font("Tahoma", 10F);
+            sideBySideBarSeriesLabel3.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.Center;
+            sideBySideBarSeriesLabel3.ResolveOverlappingMode = DevExpress.XtraCharts.ResolveOverlappingMode.Default;
+            sideBySideBarSeriesLabel3.TextOrientation = DevExpress.XtraCharts.TextOrientation.BottomToTop;
+            sideBySideBarSeriesLabel3.TextPattern = "{V:#,#}";
+            series4.Label = sideBySideBarSeriesLabel3;
+            series4.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series4.Name = "Plan";
+            sideBySideBarSeriesView3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(240)))));
+            series4.View = sideBySideBarSeriesView3;
+            sideBySideBarSeriesLabel4.Font = new System.Drawing.Font("Tahoma", 10F);
+            sideBySideBarSeriesLabel4.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.Center;
+            sideBySideBarSeriesLabel4.TextOrientation = DevExpress.XtraCharts.TextOrientation.BottomToTop;
+            sideBySideBarSeriesLabel4.TextPattern = "{V:#,#}";
+            series5.Label = sideBySideBarSeriesLabel4;
+            series5.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series5.Name = "Production";
+            sideBySideBarSeriesView4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            series5.View = sideBySideBarSeriesView4;
+            pointSeriesLabel2.Font = new System.Drawing.Font("Tahoma", 10F);
+            pointSeriesLabel2.TextPattern = "{V:#,0.0}";
+            series6.Label = pointSeriesLabel2;
+            series6.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series6.Name = "POD";
+            lineSeriesView2.AxisYName = "Secondary AxisY 1";
+            lineSeriesView2.Color = System.Drawing.Color.OrangeRed;
+            lineSeriesView2.LineMarkerOptions.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(240)))));
+            lineSeriesView2.LineMarkerOptions.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            lineSeriesView2.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series6.View = lineSeriesView2;
             this.chartSlabtest.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1,
-        series2,
-        series3};
-            this.chartSlabtest.Size = new System.Drawing.Size(1904, 613);
+        series4,
+        series5,
+        series6};
+            this.chartSlabtest.Size = new System.Drawing.Size(1904, 563);
             this.chartSlabtest.TabIndex = 7;
-            chartTitle1.Alignment = System.Drawing.StringAlignment.Near;
-            chartTitle1.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold);
-            chartTitle1.Indent = 0;
-            chartTitle1.Text = "Stitching 1";
-            chartTitle1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            chartTitle1.Visibility = DevExpress.Utils.DefaultBoolean.False;
+            chartTitle2.Alignment = System.Drawing.StringAlignment.Near;
+            chartTitle2.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold);
+            chartTitle2.Indent = 0;
+            chartTitle2.Text = "Stitching 1";
+            chartTitle2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            chartTitle2.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartSlabtest.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle1});
+            chartTitle2});
             this.chartSlabtest.CustomDrawAxisLabel += new DevExpress.XtraCharts.CustomDrawAxisLabelEventHandler(this.chartSlabtest_CustomDrawAxisLabel);
             // 
             // grdView
@@ -1235,17 +1256,19 @@
             this.splitmain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitmain)).EndInit();
             this.splitmain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
+            this.pnMonth.ResumeLayout(false);
+            this.pnMonth.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSlabtest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwView)).EndInit();
@@ -1338,5 +1361,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn COL31;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand bandAVG;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn COLAVG;
+        private System.Windows.Forms.Panel pnMonth;
+        private Source_DMP_DMC.UC.UC_MONTH_SELECTION ucMonth;
     }
 }
