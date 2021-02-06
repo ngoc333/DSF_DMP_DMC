@@ -23,9 +23,10 @@ namespace Smart_FTY
         int  i_max = 0, i_min = 0;
         int cnt = 0;
         string str_op = "DMC", strCol="";
-
+        bool _isLoad = true;
         private void FRM_ROLL_SLABTEST_MON_Load(object sender, EventArgs e)
-        {            
+        {
+            _isLoad = true;
             timer1.Enabled = true;
             timer1.Start();
             timer1.Interval = 1000;
@@ -404,11 +405,11 @@ namespace Smart_FTY
             {
                 if (this.Visible)
                 {
-
+                    _isLoad = true;
                     cnt = 39;
                     timer1.Start();
                     tmrTime.Start();
-
+                    _isLoad = false;
                 }
                 else
                 {
@@ -473,6 +474,7 @@ namespace Smart_FTY
 
         private void dtpDate_EditValueChanged(object sender, EventArgs e)
         {
+            if (_isLoad) return;
             BindingData(str_op);
         }
 
