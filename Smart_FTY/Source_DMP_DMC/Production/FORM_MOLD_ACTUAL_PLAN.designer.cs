@@ -30,6 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FORM_MOLD_ACTUAL_PLAN));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tmr_blind = new System.Windows.Forms.Timer(this.components);
             this.lblDmp = new System.Windows.Forms.Label();
@@ -42,11 +52,6 @@
             this.lbl_actual = new System.Windows.Forms.Label();
             this.lbl_plan = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.lbl_Shift = new System.Windows.Forms.Label();
-            this.pn2 = new Smart_FTY.A1Panel();
-            this.lblButton2 = new System.Windows.Forms.Label();
-            this.pn1 = new Smart_FTY.A1Panel();
-            this.lblButton1 = new System.Windows.Forms.Label();
             this.axGrid = new AxFPSpreadADO.AxfpSpread();
             this.label2 = new System.Windows.Forms.Label();
             this.lblPlan = new System.Windows.Forms.Label();
@@ -87,13 +92,25 @@
             this.MCS = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.COLOR = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn11 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.pn2.SuspendLayout();
-            this.pn1.SuspendLayout();
+            this.pnShift = new System.Windows.Forms.Panel();
+            this.dtpDate = new DevExpress.XtraEditors.DateEdit();
+            this.lbl_Shift2 = new System.Windows.Forms.Label();
+            this.lbl_Shift1 = new System.Windows.Forms.Label();
+            this.lbl_Shift3 = new System.Windows.Forms.Label();
+            this.pn2 = new Smart_FTY.A1Panel();
+            this.lblButton2 = new System.Windows.Forms.Label();
+            this.pn1 = new Smart_FTY.A1Panel();
+            this.lblButton1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.axGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdviewMachine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwviewMachine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridModel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridModel)).BeginInit();
+            this.pnShift.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpDate.Properties)).BeginInit();
+            this.pn2.SuspendLayout();
+            this.pn1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -235,83 +252,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lbl_Shift
-            // 
-            this.lbl_Shift.BackColor = System.Drawing.Color.Blue;
-            this.lbl_Shift.Font = new System.Drawing.Font("Calibri", 20.75F, System.Drawing.FontStyle.Bold);
-            this.lbl_Shift.ForeColor = System.Drawing.Color.White;
-            this.lbl_Shift.Location = new System.Drawing.Point(958, 115);
-            this.lbl_Shift.Name = "lbl_Shift";
-            this.lbl_Shift.Size = new System.Drawing.Size(154, 38);
-            this.lbl_Shift.TabIndex = 697;
-            this.lbl_Shift.Text = "SHIFT 1";
-            this.lbl_Shift.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbl_Shift.Visible = false;
-            // 
-            // pn2
-            // 
-            this.pn2.AccessibleDescription = "";
-            this.pn2.AccessibleName = "";
-            this.pn2.BorderColor = System.Drawing.Color.Empty;
-            this.pn2.BorderWidth = 2;
-            this.pn2.Controls.Add(this.lblButton2);
-            this.pn2.GradientEndColor = System.Drawing.Color.Gray;
-            this.pn2.GradientStartColor = System.Drawing.Color.White;
-            this.pn2.Image = null;
-            this.pn2.ImageLocation = new System.Drawing.Point(4, 4);
-            this.pn2.Location = new System.Drawing.Point(165, 112);
-            this.pn2.Name = "pn2";
-            this.pn2.RoundCornerRadius = 20;
-            this.pn2.ShadowOffSet = 3;
-            this.pn2.Size = new System.Drawing.Size(153, 49);
-            this.pn2.TabIndex = 699;
-            // 
-            // lblButton2
-            // 
-            this.lblButton2.BackColor = System.Drawing.Color.Transparent;
-            this.lblButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblButton2.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblButton2.ForeColor = System.Drawing.Color.Black;
-            this.lblButton2.Location = new System.Drawing.Point(0, 0);
-            this.lblButton2.Name = "lblButton2";
-            this.lblButton2.Size = new System.Drawing.Size(153, 49);
-            this.lblButton2.TabIndex = 1;
-            this.lblButton2.Text = "DMP";
-            this.lblButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblButton2.Click += new System.EventHandler(this.lblButton2_Click);
-            // 
-            // pn1
-            // 
-            this.pn1.AccessibleDescription = "";
-            this.pn1.AccessibleName = "";
-            this.pn1.BorderColor = System.Drawing.Color.Empty;
-            this.pn1.BorderWidth = 2;
-            this.pn1.Controls.Add(this.lblButton1);
-            this.pn1.GradientEndColor = System.Drawing.Color.Gray;
-            this.pn1.GradientStartColor = System.Drawing.Color.White;
-            this.pn1.Image = null;
-            this.pn1.ImageLocation = new System.Drawing.Point(4, 4);
-            this.pn1.Location = new System.Drawing.Point(10, 112);
-            this.pn1.Name = "pn1";
-            this.pn1.RoundCornerRadius = 20;
-            this.pn1.ShadowOffSet = 3;
-            this.pn1.Size = new System.Drawing.Size(153, 49);
-            this.pn1.TabIndex = 698;
-            // 
-            // lblButton1
-            // 
-            this.lblButton1.BackColor = System.Drawing.Color.Transparent;
-            this.lblButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblButton1.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblButton1.ForeColor = System.Drawing.Color.Black;
-            this.lblButton1.Location = new System.Drawing.Point(0, 0);
-            this.lblButton1.Name = "lblButton1";
-            this.lblButton1.Size = new System.Drawing.Size(153, 49);
-            this.lblButton1.TabIndex = 0;
-            this.lblButton1.Text = "DMC";
-            this.lblButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblButton1.Click += new System.EventHandler(this.lblButton1_Click);
-            // 
             // axGrid
             // 
             this.axGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -320,7 +260,7 @@
             this.axGrid.Location = new System.Drawing.Point(12, 160);
             this.axGrid.Name = "axGrid";
             this.axGrid.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axGrid.OcxState")));
-            this.axGrid.Size = new System.Drawing.Size(1893, 619);
+            this.axGrid.Size = new System.Drawing.Size(1893, 618);
             this.axGrid.TabIndex = 660;
             // 
             // label2
@@ -345,7 +285,6 @@
             this.lblPlan.TabIndex = 701;
             this.lblPlan.Text = "Plan";
             this.lblPlan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblPlan.Click += new System.EventHandler(this.label3_Click);
             // 
             // lblNoPlan
             // 
@@ -358,7 +297,6 @@
             this.lblNoPlan.TabIndex = 702;
             this.lblNoPlan.Text = "No Plan";
             this.lblNoPlan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblNoPlan.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblChange
             // 
@@ -819,12 +757,201 @@
             this.bandedGridColumn11.Visible = true;
             this.bandedGridColumn11.Width = 80;
             // 
+            // pnShift
+            // 
+            this.pnShift.Controls.Add(this.dtpDate);
+            this.pnShift.Controls.Add(this.lbl_Shift2);
+            this.pnShift.Controls.Add(this.lbl_Shift1);
+            this.pnShift.Controls.Add(this.lbl_Shift3);
+            this.pnShift.Location = new System.Drawing.Point(327, 112);
+            this.pnShift.Name = "pnShift";
+            this.pnShift.Size = new System.Drawing.Size(869, 51);
+            this.pnShift.TabIndex = 715;
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dtpDate.EditValue = new System.DateTime(2021, 1, 5, 16, 0, 56, 0);
+            this.dtpDate.Location = new System.Drawing.Point(11, 0);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.dtpDate.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 24.25F, System.Drawing.FontStyle.Bold);
+            this.dtpDate.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.dtpDate.Properties.Appearance.Options.UseFont = true;
+            this.dtpDate.Properties.Appearance.Options.UseForeColor = true;
+            this.dtpDate.Properties.AppearanceCalendar.CalendarHeader.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDate.Properties.AppearanceCalendar.CalendarHeader.Options.UseFont = true;
+            this.dtpDate.Properties.AppearanceCalendar.DayCell.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDate.Properties.AppearanceCalendar.DayCell.Options.UseFont = true;
+            this.dtpDate.Properties.AppearanceCalendar.DayCellHighlighted.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDate.Properties.AppearanceCalendar.DayCellHighlighted.Options.UseFont = true;
+            this.dtpDate.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Calibri", 24.25F, System.Drawing.FontStyle.Bold);
+            this.dtpDate.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.dtpDate.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDate.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.dtpDate.Properties.AppearanceFocused.Font = new System.Drawing.Font("Calibri", 24.25F, System.Drawing.FontStyle.Bold);
+            this.dtpDate.Properties.AppearanceFocused.Options.UseFont = true;
+            this.dtpDate.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Calibri", 24.25F, System.Drawing.FontStyle.Bold);
+            this.dtpDate.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.dtpDate.Properties.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            serializableAppearanceObject1.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold);
+            serializableAppearanceObject1.Options.UseFont = true;
+            serializableAppearanceObject2.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold);
+            serializableAppearanceObject2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            serializableAppearanceObject2.Options.UseFont = true;
+            serializableAppearanceObject3.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold);
+            serializableAppearanceObject3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            serializableAppearanceObject3.Options.UseFont = true;
+            serializableAppearanceObject4.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold);
+            serializableAppearanceObject4.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            serializableAppearanceObject4.Options.UseFont = true;
+            this.dtpDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", 50, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null)});
+            this.dtpDate.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            editorButtonImageOptions2.Location = DevExpress.XtraEditors.ImageLocation.Default;
+            serializableAppearanceObject5.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold);
+            serializableAppearanceObject5.Options.UseFont = true;
+            serializableAppearanceObject6.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold);
+            serializableAppearanceObject6.Options.UseFont = true;
+            serializableAppearanceObject7.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold);
+            serializableAppearanceObject7.Options.UseFont = true;
+            serializableAppearanceObject8.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold);
+            serializableAppearanceObject8.Options.UseFont = true;
+            this.dtpDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Close, "", 50, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null)});
+            this.dtpDate.Properties.CalendarTimeProperties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.dtpDate.Properties.CalendarTimeProperties.ReadOnly = true;
+            this.dtpDate.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.dtpDate.Properties.ContextImageOptions.SvgImageSize = new System.Drawing.Size(1, 10);
+            this.dtpDate.Properties.DisplayFormat.FormatString = "yyyy/MM/dd";
+            this.dtpDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.dtpDate.Properties.EditFormat.FormatString = "yyyy/MM/dd";
+            this.dtpDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtpDate.Properties.Mask.EditMask = "yyyy/MM/dd";
+            this.dtpDate.Properties.ShowNullValuePromptWhenFocused = true;
+            this.dtpDate.Properties.VistaCalendarViewStyle = DevExpress.XtraEditors.VistaCalendarViewStyle.MonthView;
+            this.dtpDate.Size = new System.Drawing.Size(237, 47);
+            this.dtpDate.TabIndex = 713;
+            this.dtpDate.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.dtpDate.ToolTipTitle = "Click vào để chọn ngày";
+            this.dtpDate.EditValueChanged += new System.EventHandler(this.dtpDate_EditValueChanged);
+            // 
+            // lbl_Shift2
+            // 
+            this.lbl_Shift2.BackColor = System.Drawing.Color.Gray;
+            this.lbl_Shift2.Font = new System.Drawing.Font("Calibri", 28.75F, System.Drawing.FontStyle.Bold);
+            this.lbl_Shift2.ForeColor = System.Drawing.Color.White;
+            this.lbl_Shift2.Location = new System.Drawing.Point(459, 2);
+            this.lbl_Shift2.Name = "lbl_Shift2";
+            this.lbl_Shift2.Size = new System.Drawing.Size(204, 45);
+            this.lbl_Shift2.TabIndex = 705;
+            this.lbl_Shift2.Tag = "2";
+            this.lbl_Shift2.Text = "Shift 2";
+            this.lbl_Shift2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Shift2.Click += new System.EventHandler(this.lbl_Shift_Click);
+            // 
+            // lbl_Shift1
+            // 
+            this.lbl_Shift1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.lbl_Shift1.Font = new System.Drawing.Font("Calibri", 28.75F, System.Drawing.FontStyle.Bold);
+            this.lbl_Shift1.ForeColor = System.Drawing.Color.White;
+            this.lbl_Shift1.Location = new System.Drawing.Point(254, 2);
+            this.lbl_Shift1.Name = "lbl_Shift1";
+            this.lbl_Shift1.Size = new System.Drawing.Size(204, 45);
+            this.lbl_Shift1.TabIndex = 696;
+            this.lbl_Shift1.Tag = "1";
+            this.lbl_Shift1.Text = "Shift 1";
+            this.lbl_Shift1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Shift1.Click += new System.EventHandler(this.lbl_Shift_Click);
+            // 
+            // lbl_Shift3
+            // 
+            this.lbl_Shift3.BackColor = System.Drawing.Color.Gray;
+            this.lbl_Shift3.Font = new System.Drawing.Font("Calibri", 28.75F, System.Drawing.FontStyle.Bold);
+            this.lbl_Shift3.ForeColor = System.Drawing.Color.White;
+            this.lbl_Shift3.Location = new System.Drawing.Point(664, 2);
+            this.lbl_Shift3.Name = "lbl_Shift3";
+            this.lbl_Shift3.Size = new System.Drawing.Size(204, 45);
+            this.lbl_Shift3.TabIndex = 704;
+            this.lbl_Shift3.Tag = "3";
+            this.lbl_Shift3.Text = "Shift 3";
+            this.lbl_Shift3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Shift3.Click += new System.EventHandler(this.lbl_Shift_Click);
+            // 
+            // pn2
+            // 
+            this.pn2.AccessibleDescription = "";
+            this.pn2.AccessibleName = "";
+            this.pn2.BorderColor = System.Drawing.Color.Empty;
+            this.pn2.BorderWidth = 2;
+            this.pn2.Controls.Add(this.lblButton2);
+            this.pn2.GradientEndColor = System.Drawing.Color.Gray;
+            this.pn2.GradientStartColor = System.Drawing.Color.White;
+            this.pn2.Image = null;
+            this.pn2.ImageLocation = new System.Drawing.Point(4, 4);
+            this.pn2.Location = new System.Drawing.Point(168, 112);
+            this.pn2.Name = "pn2";
+            this.pn2.RoundCornerRadius = 20;
+            this.pn2.ShadowOffSet = 3;
+            this.pn2.Size = new System.Drawing.Size(153, 49);
+            this.pn2.TabIndex = 717;
+            // 
+            // lblButton2
+            // 
+            this.lblButton2.BackColor = System.Drawing.Color.Transparent;
+            this.lblButton2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblButton2.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblButton2.ForeColor = System.Drawing.Color.Black;
+            this.lblButton2.Location = new System.Drawing.Point(0, 0);
+            this.lblButton2.Name = "lblButton2";
+            this.lblButton2.Size = new System.Drawing.Size(153, 49);
+            this.lblButton2.TabIndex = 1;
+            this.lblButton2.Text = "DMP";
+            this.lblButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblButton2.Click += new System.EventHandler(this.lblButton2_Click);
+            // 
+            // pn1
+            // 
+            this.pn1.AccessibleDescription = "";
+            this.pn1.AccessibleName = "";
+            this.pn1.BorderColor = System.Drawing.Color.Empty;
+            this.pn1.BorderWidth = 2;
+            this.pn1.Controls.Add(this.lblButton1);
+            this.pn1.GradientEndColor = System.Drawing.Color.Gray;
+            this.pn1.GradientStartColor = System.Drawing.Color.White;
+            this.pn1.Image = null;
+            this.pn1.ImageLocation = new System.Drawing.Point(4, 4);
+            this.pn1.Location = new System.Drawing.Point(13, 112);
+            this.pn1.Name = "pn1";
+            this.pn1.RoundCornerRadius = 20;
+            this.pn1.ShadowOffSet = 3;
+            this.pn1.Size = new System.Drawing.Size(153, 49);
+            this.pn1.TabIndex = 716;
+            // 
+            // lblButton1
+            // 
+            this.lblButton1.BackColor = System.Drawing.Color.Transparent;
+            this.lblButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblButton1.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblButton1.ForeColor = System.Drawing.Color.Black;
+            this.lblButton1.Location = new System.Drawing.Point(0, 0);
+            this.lblButton1.Name = "lblButton1";
+            this.lblButton1.Size = new System.Drawing.Size(153, 49);
+            this.lblButton1.TabIndex = 0;
+            this.lblButton1.Text = "DMC";
+            this.lblButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblButton1.Click += new System.EventHandler(this.lblButton1_Click);
+            // 
             // FORM_MOLD_ACTUAL_PLAN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1920, 1062);
+            this.ClientSize = new System.Drawing.Size(1920, 1061);
+            this.Controls.Add(this.pn2);
+            this.Controls.Add(this.pn1);
+            this.Controls.Add(this.pnShift);
             this.Controls.Add(this.gridModel);
             this.Controls.Add(this.grdviewMachine);
             this.Controls.Add(this.lblNoUse);
@@ -833,9 +960,6 @@
             this.Controls.Add(this.lblNoPlan);
             this.Controls.Add(this.lblPlan);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pn2);
-            this.Controls.Add(this.pn1);
-            this.Controls.Add(this.lbl_Shift);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_actual);
             this.Controls.Add(this.lbl_plan);
@@ -852,15 +976,17 @@
             this.Text = "Production Status";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_Mold_WS_Change_By_Shift_FormClosed);
             this.Load += new System.EventHandler(this.Frm_Mold_WS_Change_By_Shift_Load);
-            this.Shown += new System.EventHandler(this.FORM_MOLD_ACTUAL_PLAN_Shown);
             this.VisibleChanged += new System.EventHandler(this.Frm_Mold_WS_Change_By_Shift_VisibleChanged);
-            this.pn2.ResumeLayout(false);
-            this.pn1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.axGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdviewMachine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwviewMachine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridModel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridModel)).EndInit();
+            this.pnShift.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtpDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpDate.Properties)).EndInit();
+            this.pn2.ResumeLayout(false);
+            this.pn1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -880,11 +1006,6 @@
         private System.Windows.Forms.Label lbl_actual;
         private System.Windows.Forms.Label lbl_plan;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lbl_Shift;
-        protected A1Panel pn1;
-        protected System.Windows.Forms.Label lblButton1;
-        protected A1Panel pn2;
-        protected System.Windows.Forms.Label lblButton2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblPlan;
         private System.Windows.Forms.Label lblNoPlan;
@@ -924,5 +1045,14 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn MCS;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn COLOR;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn11;
+        private System.Windows.Forms.Panel pnShift;
+        private DevExpress.XtraEditors.DateEdit dtpDate;
+        private System.Windows.Forms.Label lbl_Shift2;
+        private System.Windows.Forms.Label lbl_Shift1;
+        private System.Windows.Forms.Label lbl_Shift3;
+        protected A1Panel pn2;
+        protected System.Windows.Forms.Label lblButton2;
+        protected A1Panel pn1;
+        protected System.Windows.Forms.Label lblButton1;
     }
 }

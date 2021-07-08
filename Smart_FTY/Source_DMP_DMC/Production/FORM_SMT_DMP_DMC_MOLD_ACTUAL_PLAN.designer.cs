@@ -277,17 +277,15 @@
             this.axGrid.Location = new System.Drawing.Point(12, 160);
             this.axGrid.Name = "axGrid";
             this.axGrid.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axGrid.OcxState")));
-            this.axGrid.Size = new System.Drawing.Size(1893, 902);
+            this.axGrid.Size = new System.Drawing.Size(1893, 899);
             this.axGrid.TabIndex = 660;
-            //this.axGrid.ClickEvent += new AxFPSpreadADO._DSpreadEvents_ClickEventHandler(this.axGrid_ClickEvent);
-            //this.axGrid.BeforeEditMode += new AxFPSpreadADO._DSpreadEvents_BeforeEditModeEventHandler(this.axGrid_BeforeEditMode);
             // 
             // FORM_SMT_DMP_DMC_MOLD_ACTUAL_PLAN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1920, 1064);
+            this.ClientSize = new System.Drawing.Size(1920, 1061);
             this.Controls.Add(this.pn2);
             this.Controls.Add(this.pn1);
             this.Controls.Add(this.lbl_Shift);

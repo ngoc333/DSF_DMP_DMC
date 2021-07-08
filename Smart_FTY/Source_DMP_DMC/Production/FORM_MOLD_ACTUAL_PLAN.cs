@@ -19,9 +19,6 @@ using AxFPSpreadADO;
 
 namespace Smart_FTY
 {
-
-    
-
     public partial class FORM_MOLD_ACTUAL_PLAN : Form
     {
         public FORM_MOLD_ACTUAL_PLAN()
@@ -66,28 +63,30 @@ namespace Smart_FTY
 
         #region Init
 
-        string _status ;
+        string _status;
         public int _Izone = 1;
-       // string _lbl1, _lbl2, _lbl3;
+        // string _lbl1, _lbl2, _lbl3;
         public int _time = 0;
-        int _time_load = 20;
+        int _time_load = 60;
         int _time_auto = 0;
-        int _countP = 0, _countN = 0, _countR = 0 , _countNU = 0;
+        int _countP = 0, _countN = 0, _countR = 0, _countNU = 0;
         DataTable _dt_layout_DMC = null;
         DataTable _dt_layout_DMP = null;
-      //  string[] str_yellow;
+        //  string[] str_yellow;
         int _iColor = 0;
         bool _load_form = true;
         int _iCount = 0;
         bool _bLoad = true;
+        bool _isLoad = true;
+        string _shift = "1";
         //int _bf_clickRow=0, _bf_clickCol=0;
-    
 
-        
+
+
         //FORM_MOLD_PRODUCTION_POP _pop_change = new FORM_MOLD_PRODUCTION_POP();
         //FORM_MOLD_PRODUCTION_POP_PRE _pop_change_pre = new FORM_MOLD_PRODUCTION_POP_PRE();
-      //  Thread th;
-         
+        //  Thread th;
+
         List<string> _Loc_change_DMC = new List<string>();
         List<string> _Loc_plan_DMC = new List<string>();
         List<string> _Loc_change_DMP = new List<string>();
@@ -109,12 +108,12 @@ namespace Smart_FTY
         }
         private void GoFullscreen()
         {
-           
+
             //if (fullscreen)
             //{
-                this.WindowState = FormWindowState.Normal;
-                this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-                this.Bounds = Screen.PrimaryScreen.Bounds;
+            this.WindowState = FormWindowState.Normal;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Bounds = Screen.PrimaryScreen.Bounds;
             //}
             //else
             //{
@@ -168,7 +167,7 @@ namespace Smart_FTY
 
 
                 //  axGrid.SetCellBorder((int)G.S1_M1_L_Tar, 1, (int)G.S3_M2_R_Cur, axGrid.MaxRows, CellBorderIndexConstants.CellBorderIndexOutline, 0, CellBorderStyleConstants.CellBorderStyleBlank);
-                
+
 
                 for (int irow = 2; irow <= 50; irow++)
                     axGrid.set_RowHeight(irow, iRowHeight);
@@ -177,7 +176,7 @@ namespace Smart_FTY
                     axGrid.set_ColWidth(icol, iColWidth);
             }
             catch (Exception)
-            {}            
+            { }
         }
 
         #region DMC
@@ -187,16 +186,16 @@ namespace Smart_FTY
             int iColPlus = Convert.ToInt32(arg_dt.Rows[arg_idt]["col_cen"]);
             int iRowPlus = Convert.ToInt32(arg_dt.Rows[arg_idt]["row_cen"]);
             //arg_grid.AddCellSpan(arg_col + (iColPlus - 1), arg_row + (iRowPlus - 1), iColPlus, iRowPlus);
-            arg_grid.AddCellSpan(arg_col + 1, arg_row - (iRowPlus -1), iColPlus, iRowPlus);
+            arg_grid.AddCellSpan(arg_col + 1, arg_row - (iRowPlus - 1), iColPlus, iRowPlus);
             arg_grid.Col = arg_col + 1;
             arg_grid.Row = arg_row - (iRowPlus - 1);
             arg_grid.TypeEditMultiLine = true;
             arg_grid.FontBold = true;
             arg_grid.FontSize = 18f;
             arg_grid.BackColor = Color.FromArgb(242, 226, 213);
-            
-            arg_grid.SetText(arg_col + 1, arg_row - (iRowPlus -1),
-                             arg_dt.Rows[arg_idt]["text_cen"].ToString().Replace("-","\n"));
+
+            arg_grid.SetText(arg_col + 1, arg_row - (iRowPlus - 1),
+                             arg_dt.Rows[arg_idt]["text_cen"].ToString().Replace("-", "\n"));
 
 
             //int c = Convert.ToInt32(arg_dt.Rows[arg_idt]["line"].ToString());
@@ -208,14 +207,14 @@ namespace Smart_FTY
             //    arg_grid.Col = arg_col + i;
             //    arg_grid.BackColor = Color.FromArgb(244, 140, 65);
             //}
-                
+
             //arg_grid.SetCellBorder(arg_col + 1, arg_row, arg_col + c, arg_row
             //                          , CellBorderIndexConstants.CellBorderIndexLeft, 0x418cf4
             //                          , CellBorderStyleConstants.CellBorderStyleSolid);
             //arg_grid.SetCellBorder(arg_col + 1, arg_row, arg_col + c, arg_row
             //                      , CellBorderIndexConstants.CellBorderIndexBottom, 0x418cf4
             //                      , CellBorderStyleConstants.CellBorderStyleSolid);
-           
+
         }
 
         //private void MachineCenterBG(int arg_col, int arg_row, int arg_idt, DataTable arg_dt, AxfpSpread arg_grid)
@@ -306,9 +305,9 @@ namespace Smart_FTY
                     _countNU++;
 
                 }
-              //  arg_grid.BackColor = Color.FromName(arg_dt.Rows[arg_idt]["color_B_value"].ToString());
+                //  arg_grid.BackColor = Color.FromName(arg_dt.Rows[arg_idt]["color_B_value"].ToString());
                 arg_grid.ForeColor = Color.FromName(arg_dt.Rows[arg_idt]["color_F_value"].ToString());
-          
+
 
                 //if (arg_dt.Rows[arg_idt]["Status"].ToString() == "1")
                 //    _Loc_plan_DMC.Add(arg_col + " " + arg_row + " " + arg_dt.Rows[arg_idt]["machine_id"].ToString());
@@ -349,22 +348,24 @@ namespace Smart_FTY
                 //}
             }
             catch (Exception)
-            {}
-            
+            { }
+
         }
 
         private void DisplayGridDMC(DataTable arg_dt, AxfpSpread arg_grid)
         {
-           try
+            try
             {
                 _countP = 0;
                 _countN = 0;
                 _countNU = 0;
                 _countR = 0;
 
-                if (arg_dt == null || arg_dt.Rows.Count == 0) return;
                 axGrid.ClearRange(0, 0, 50, 50, true);
                 create_default(arg_grid);
+                if (arg_dt == null || arg_dt.Rows.Count == 0) return;
+                
+                
                 _Loc_change_DMC.Clear();
                 int row_s2 = 15;
                 int row_s1 = 7;
@@ -388,13 +389,13 @@ namespace Smart_FTY
                             if (arg_dt.Rows[i]["direction"].ToString() == "1")
                             {
                                 irow--;
-                             //   MachineCenterBG(icol, irow, i, arg_dt, arg_grid); 
+                                //   MachineCenterBG(icol, irow, i, arg_dt, arg_grid); 
                             }
                             else if (arg_dt.Rows[i]["direction"].ToString() == "2") icol++;
                             else if (arg_dt.Rows[i]["direction"].ToString() == "3") irow++;
                             else icol--;
                             MachineBodyDMC(icol, irow, i, arg_dt, arg_grid);
-                                                     
+
                         }
                         else
                         {
@@ -423,7 +424,7 @@ namespace Smart_FTY
                         {
                             irow = row_s2;
                             icol = icol + 6;
-                          //  axGrid.SetText(icol, irow, "2");
+                            //  axGrid.SetText(icol, irow, "2");
                         }
                         else if (arg_dt.Rows[i]["line_id"].ToString() == "1")
                         {
@@ -431,24 +432,24 @@ namespace Smart_FTY
                             icol--;
                             //   axGrid.SetText(icol, irow,"1");
                         }
-                        else 
+                        else
                         {
                             irow = row_s3;
                             col_s3 += 8;
-                            icol= col_s3 ;
+                            icol = col_s3;
                         }
                         MachineBodyDMC(icol, irow, i, arg_dt, arg_grid);
                         MachineCenterText(icol, irow, i, arg_dt, arg_grid);
-                      //  MachineCenterBG(icol, irow, i, arg_dt, arg_grid); 
+                        //  MachineCenterBG(icol, irow, i, arg_dt, arg_grid); 
                     }
                 }
                 set_qty();
 
-               // if (_Loc_change.Count > 0) tmr_blind.Start();
-               // else tmr_blind.Stop();
+                // if (_Loc_change.Count > 0) tmr_blind.Start();
+                // else tmr_blind.Stop();
             }
-           catch
-           {}
+            catch
+            { }
         }
 
 
@@ -480,7 +481,7 @@ namespace Smart_FTY
 
                 arg_grid.set_ColWidth(icol, 5);
                 MachineHeadDMP(icol, irow, 0, arg_dt, arg_grid);
-                irow += 2;               
+                irow += 2;
                 MachineBodyDMP(icol, irow, 0, arg_dt, arg_grid);
                 irow++;
 
@@ -493,19 +494,18 @@ namespace Smart_FTY
                     }
                     else
                     {
-
                         icol += 4;
                         arg_grid.set_ColWidth(icol, 5);
                         irow = row_s;
                         MachineHeadDMP(icol, irow, i, arg_dt, arg_grid);
                         irow += 2;
                         MachineBodyDMP(icol, irow, i, arg_dt, arg_grid);
-                        irow++; 
+                        irow++;
                     }
                 }
                 set_qty();
-               // if (_Loc_yellow.Count > 0) tmr_blind.Start();
-               // else tmr_blind.Stop();
+                // if (_Loc_yellow.Count > 0) tmr_blind.Start();
+                // else tmr_blind.Stop();
             }
             catch
             {
@@ -554,7 +554,7 @@ namespace Smart_FTY
 
             }
             catch
-            {}
+            { }
         }
 
         public void MachineBodyDMP(int arg_icol, int arg_irow, int arg_idt, DataTable arg_dt, AxfpSpread arg_grid)
@@ -573,7 +573,7 @@ namespace Smart_FTY
                 arg_grid.Text = arg_dt.Rows[arg_idt]["STA"].ToString();
 
                 arg_grid.Col = arg_icol + 1;
-                arg_grid.Text =  arg_dt.Rows[arg_idt]["PLAN_L"].ToString();
+                arg_grid.Text = arg_dt.Rows[arg_idt]["PLAN_L"].ToString();
                 if (arg_dt.Rows[arg_idt]["USE_L"].ToString() == "Y")
                 {
                     if (arg_dt.Rows[arg_idt]["L_color_B_value"].ToString() == "LIME")
@@ -634,10 +634,10 @@ namespace Smart_FTY
                     _countNU++;
 
                 }
-               // arg_grid.BackColor = Color.FromName(arg_dt.Rows[arg_idt]["R_color_B_value"].ToString());
+                // arg_grid.BackColor = Color.FromName(arg_dt.Rows[arg_idt]["R_color_B_value"].ToString());
                 arg_grid.ForeColor = Color.FromName(arg_dt.Rows[arg_idt]["R_color_F_value"].ToString());
 
-                              
+
                 if (arg_dt.Rows[arg_idt]["L_Status"].ToString() == "1")
                     _Loc_plan_DMP.Add((arg_icol + 1) + " " + arg_irow + " " + arg_dt.Rows[arg_idt]["machine_cd"].ToString());
                 if (arg_dt.Rows[arg_idt]["R_Status"].ToString() == "1")
@@ -650,11 +650,11 @@ namespace Smart_FTY
 
             }
             catch (Exception)
-            {}
+            { }
 
         }
 
-       
+
 
 
         #endregion DMP
@@ -694,29 +694,30 @@ namespace Smart_FTY
                 else _iColor++;
             }
             catch (Exception)
-            {}          
+            { }
         }
 
 
-        public void loaddata( bool arg_status)
+        public void loaddata()
         {
             try
             {
-                
-               // if (arg_status)
-                  //  this.axGrid.Hide();
+
+                // if (arg_status)
+                //  this.axGrid.Hide();
                 DataTable dt = null;
                 if (_status == "DMC")
                 {
-                    dt = SEL_APS_PLAN_ACTUAL("90_1");
-                    if (dt != null && dt.Rows.Count > 0)
-                        _dt_layout_DMC = dt;
+                    dt = SEL_APS_PLAN_ACTUAL("90_1", _shift);
+                    _dt_layout_DMC = dt;
+                    //if (dt != null && dt.Rows.Count > 0)
+                    //    _dt_layout_DMC = dt;
 
-                    DataTable _dtMachine = SEL_APS_PLAN_ACTUAL("90_1", "Q", "A");
-                    DataTable _dtModel = SEL_APS_PLAN_ACTUAL("90_1", "Q1", "A");
+                    DataTable _dtMachine = SEL_APS_PLAN_ACTUAL("90_1", "Q", "A",_shift);
+                    DataTable _dtModel = SEL_APS_PLAN_ACTUAL("90_1", "Q1", "A", _shift);
                     setGridData(_dtMachine, _dtModel);
                     //this.axGrid.Hide();
-                    axGrid.Hide();                    
+                    axGrid.Hide();
                     //axGridDMP.Hide();
                     //axGridDMP.SendToBack();
                     //axGrid.BringToFront();
@@ -725,13 +726,12 @@ namespace Smart_FTY
                 }
                 else
                 {
-                    dt = SEL_APS_PLAN_ACTUAL("90");
+                    dt = SEL_APS_PLAN_ACTUAL("90", _shift);
                     if (dt != null && dt.Rows.Count > 0)
                         _dt_layout_DMP = dt;
 
-                    DataTable _dtMachine = SEL_APS_PLAN_ACTUAL("90", "Q", "A");
-                    DataTable _dtModel = SEL_APS_PLAN_ACTUAL("90", "Q1", "A");
-                    setGridData(_dtMachine, _dtModel);
+                    DataTable _dtMachine = SEL_APS_PLAN_ACTUAL("90", "Q", "A",_shift);
+                    DataTable _dtModel = SEL_APS_PLAN_ACTUAL("90", "Q1", "A", _shift);
                     setGridData(_dtMachine, _dtModel);
                     //this.axGridDMP.Hide();
                     //axGridDMP.Hide();                    
@@ -741,17 +741,17 @@ namespace Smart_FTY
                     DisplayGridDMP(_dt_layout_DMP, axGrid);
                     axGrid.Show();
                 }
-                
+
 
                 //autoClick();
-               // if (arg_status)
-               // {
-                   // WarehouseMaterialSystem.ClassLib.WinAPI.AnimateWindow(this.axGrid.Handle, 400, WarehouseMaterialSystem.ClassLib.WinAPI.getSlidType("2"));
-                    //this.axGrid.Show();
+                // if (arg_status)
+                // {
+                // WarehouseMaterialSystem.ClassLib.WinAPI.AnimateWindow(this.axGrid.Handle, 400, WarehouseMaterialSystem.ClassLib.WinAPI.getSlidType("2"));
+                //this.axGrid.Show();
                 //}
             }
             catch (Exception)
-            {}
+            { }
         }
 
         private void setGridData(DataTable _dtMachine, DataTable _dtModel)
@@ -760,7 +760,7 @@ namespace Smart_FTY
             {
                 if (_dtMachine != null)
                 {
-                    grdviewMachine.DataSource = _dtMachine.Select("MACHINE_NAME <>'TOTAL'", "MACHINE_NAME").CopyToDataTable();
+                    grdviewMachine.DataSource = _dtMachine.Select("MACHINE_NAME <>'TOTAL'","MACHINE_NAME").CopyToDataTable();
                     gvwviewMachine.Columns[2].OwnerBand.Caption = _dtMachine.Rows[0]["MOLD"].ToString();
                     gvwviewMachine.Columns[3].OwnerBand.Caption = _dtMachine.Rows[0]["INPUT"].ToString();
                     gvwviewMachine.Columns[4].OwnerBand.Caption = _dtMachine.Rows[0]["BALANCE"].ToString();
@@ -768,7 +768,7 @@ namespace Smart_FTY
                 }
                 if (_dtModel != null)
                 {
-                    gridModel.DataSource = _dtModel.Select("SHORT_NAME <>'TOTAL'", "SHORT_NAME").CopyToDataTable();
+                    gridModel.DataSource = _dtModel.Select("SHORT_NAME <>'TOTAL'","SHORT_NAME").CopyToDataTable();
                     bandedGridModel.Columns[5].OwnerBand.Caption = _dtModel.Rows[0]["QTY"].ToString();
                     bandedGridModel.Columns[6].OwnerBand.Caption = _dtModel.Rows[0]["MOLD_INPUT"].ToString();
                 }
@@ -783,7 +783,7 @@ namespace Smart_FTY
                     gvwviewMachine.Columns[i].OptionsFilter.AllowFilter = false;
                     gvwviewMachine.Columns[i].OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
                     gvwviewMachine.Columns[i].AppearanceCell.Font = new System.Drawing.Font("Calibri", 12, FontStyle.Bold);
-                    
+
                     gvwviewMachine.Columns[i].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
                 }
 
@@ -804,7 +804,7 @@ namespace Smart_FTY
                     {
                         bandedGridModel.Columns[i].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
                     }
-                        
+
                 }
             }
             catch (Exception ex)
@@ -812,7 +812,7 @@ namespace Smart_FTY
 
                 throw;
             }
-            
+
         }
 
         private void autoClick(List<string> arg_list)
@@ -830,34 +830,40 @@ namespace Smart_FTY
                 }
             }
             catch (Exception)
-            {}
+            { }
         }
-                
+
 
         #endregion Fuction
 
         #region DB
-        public DataTable SEL_APS_PLAN_ACTUAL(string arg_wh)
+        public DataTable SEL_APS_PLAN_ACTUAL(string arg_wh, string argShift)
         {
             COM.OraDB MyOraDB = new COM.OraDB();
             System.Data.DataSet ds_ret;
 
             try
             {
-                string process_name = "PKG_DMC.SEL_MOLD_PRODUCTION_LAYOUT";
+                string process_name = "PKG_SPB_MOLD_WMS_V2.SEL_MOLD_PROD_LAYOUT_SHIFT";
 
-                MyOraDB.ReDim_Parameter(2);
+                MyOraDB.ReDim_Parameter(4);
                 MyOraDB.Process_Name = process_name;
 
- 
+
                 MyOraDB.Parameter_Name[0] = "ARG_WH_CD";
-                MyOraDB.Parameter_Name[1] = "OUT_CURSOR";
+                MyOraDB.Parameter_Name[1] = "ARG_DATE";
+                MyOraDB.Parameter_Name[2] = "ARG_SHIFT";
+                MyOraDB.Parameter_Name[3] = "OUT_CURSOR";
 
                 MyOraDB.Parameter_Type[0] = (int)OracleType.VarChar;
-                MyOraDB.Parameter_Type[1] = (int)OracleType.Cursor;
+                MyOraDB.Parameter_Type[1] = (int)OracleType.VarChar;
+                MyOraDB.Parameter_Type[2] = (int)OracleType.VarChar;
+                MyOraDB.Parameter_Type[3] = (int)OracleType.Cursor;
 
                 MyOraDB.Parameter_Values[0] = arg_wh;
-                MyOraDB.Parameter_Values[1] = "";
+                MyOraDB.Parameter_Values[1] = dtpDate.DateTime.ToString("yyyyMMdd");
+                MyOraDB.Parameter_Values[2] = argShift;
+                MyOraDB.Parameter_Values[3] = "";
 
                 MyOraDB.Add_Select_Parameter(true);
                 ds_ret = MyOraDB.Exe_Select_Procedure();
@@ -871,7 +877,7 @@ namespace Smart_FTY
             }
         }
 
-        public DataTable SEL_APS_PLAN_ACTUAL(string WH, string TYPE, string NO)
+        public DataTable SEL_APS_PLAN_ACTUAL(string WH, string TYPE, string NO, string argShift)
         {
             COM.OraDB MyOraDB = new COM.OraDB();
             System.Data.DataSet ds_ret;
@@ -880,24 +886,30 @@ namespace Smart_FTY
             {
                 string process_name = "PKG_SPB_MOLD_WMS_V2.SEL_MOLD_PRODUCTION_LAYOUT_DMC";
 
-                MyOraDB.ReDim_Parameter(4);
+                MyOraDB.ReDim_Parameter(6);
                 MyOraDB.Process_Name = process_name;
 
 
                 MyOraDB.Parameter_Name[0] = "ARG_WH";
                 MyOraDB.Parameter_Name[1] = "ARG_TYPE";
                 MyOraDB.Parameter_Name[2] = "ARG_NO";
-                MyOraDB.Parameter_Name[3] = "OUT_CURSOR";
+                MyOraDB.Parameter_Name[3] = "ARG_DATE";
+                MyOraDB.Parameter_Name[4] = "ARG_SHIFT";
+                MyOraDB.Parameter_Name[5] = "OUT_CURSOR";
 
                 MyOraDB.Parameter_Type[0] = (int)OracleType.VarChar;
                 MyOraDB.Parameter_Type[1] = (int)OracleType.VarChar;
                 MyOraDB.Parameter_Type[2] = (int)OracleType.VarChar;
-                MyOraDB.Parameter_Type[3] = (int)OracleType.Cursor;
+                MyOraDB.Parameter_Type[3] = (int)OracleType.VarChar;
+                MyOraDB.Parameter_Type[4] = (int)OracleType.VarChar;
+                MyOraDB.Parameter_Type[5] = (int)OracleType.Cursor;
 
                 MyOraDB.Parameter_Values[0] = WH;
                 MyOraDB.Parameter_Values[1] = TYPE;
                 MyOraDB.Parameter_Values[2] = NO;
-                MyOraDB.Parameter_Values[3] = "";
+                MyOraDB.Parameter_Values[3] = dtpDate.DateTime.ToString("yyyyMMdd");
+                MyOraDB.Parameter_Values[4] = argShift;
+                MyOraDB.Parameter_Values[5] = "";
 
                 MyOraDB.Add_Select_Parameter(true);
                 ds_ret = MyOraDB.Exe_Select_Procedure();
@@ -932,32 +944,26 @@ namespace Smart_FTY
         }
 
 
-       
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             try
             {
-                //lblDate.Text = string.Format(DateTime.Now.ToString("yyyy-MM-dd")) + "\n\r" + string.Format(DateTime.Now.ToString("HH:mm:ss"));
+                lblDate.Text = string.Format(DateTime.Now.ToString("yyyy-MM-dd")) + "\n\r" + string.Format(DateTime.Now.ToString("HH:mm:ss"));
                 //blind();
                 _time++;
-                _time_auto++;             
-                 
-
-
-                if (_time >= _time_load)
+                if (_time == _time_load)
                 {
-                    loaddata(true);
-                    
+                    loaddata();
                     _time = 0;
                 }
 
                 if (_bLoad && _time == 1)
                 {
                     lblDmc_Click(lblDmc, null);
-                    _load_form = false;
                 }
-               
+
             }
             catch
             {
@@ -967,7 +973,7 @@ namespace Smart_FTY
 
         private void tmr_blind_Tick(object sender, EventArgs e)
         {
-            if (_status=="DMC") blind(_Loc_change_DMC, axGrid);
+            if (_status == "DMC") blind(_Loc_change_DMC, axGrid);
             else blind(_Loc_change_DMP, axGrid);
         }
 
@@ -987,25 +993,31 @@ namespace Smart_FTY
             {
                 if (this.Visible)
                 {
-                    //_time_auto = 10;
-                    //if (_load_form)
-                    //{
-                        timer1.Start();
-
-                        
-                        //lblDmp_Click(lblDmc, null);
-                        _load_form = false;
-                    //}                 
+                    dtpDate.EditValue = DateTime.Now;
+                    _isLoad = true;
+                    if (Convert.ToInt16(DateTime.Now.ToString("HH")) >= 14 && Convert.ToInt16(DateTime.Now.ToString("HH")) < 22)
+                    {
+                        lbl_Shift_Click(lbl_Shift2, null);
+                    }
+                    else if (Convert.ToInt16(DateTime.Now.ToString("HH")) >= 6 && Convert.ToInt16(DateTime.Now.ToString("HH")) < 14)
+                    {
+                        lbl_Shift_Click(lbl_Shift1, null);
+                    }
+                    else
+                    {
+                        lbl_Shift_Click(lbl_Shift3, null);
+                    }
+                    loaddata();
+                    timer1.Start();
                 }
                 else
                 {
-                    _load_form = true;
-                     timer1.Stop();
+                    timer1.Stop();
                 }
-                
+
             }
             catch (Exception)
-            {}
+            { }
         }
 
 
@@ -1013,7 +1025,7 @@ namespace Smart_FTY
         //{
         //    e.cancel = true;
         //}
-        
+
         //private void axGrid_ClickEvent(object sender, Ax_DSpreadEvents_ClickEvent e)
         //{
         //    try
@@ -1046,7 +1058,7 @@ namespace Smart_FTY
         //        //}
         //        //else if (str1 != null)
         //        //{
-                   
+
 
         //        //}
         //        //else
@@ -1062,21 +1074,21 @@ namespace Smart_FTY
 
         private void lblDmp_Click(object sender, EventArgs e)
         {
-            try 
-	        {
+            try
+            {
                 _iCount = 0;
                 //lblButton2.BackColor = Color.Gray;
                 //lblButton2.ForeColor = Color.White;
                 //lblButton1.BackColor = Color.White;
                 //lblButton1.ForeColor = Color.Black;                
-                loaddata(true);
+                loaddata();
                 //lblButton2.Enabled = false;
                 //lblButton1.Enabled = true;
-                
-	        }
-	        catch (Exception)
-	        {}
-            
+
+            }
+            catch (Exception)
+            { }
+
         }
 
         private void lblDmc_Click(object sender, EventArgs e)
@@ -1088,23 +1100,23 @@ namespace Smart_FTY
                 //lblButton1.ForeColor = Color.White;
                 //lblButton2.BackColor = Color.White;
                 //lblButton2.ForeColor = Color.Black;                
-                loaddata(true);
+                loaddata();
                 //lblButton1.Enabled = false;
                 //lblButton2.Enabled = true;
-                
+
 
             }
             catch (Exception)
-            {}
-            
+            { }
+
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
             lblDate.Text = string.Format(DateTime.Now.ToString("yyyy-MM-dd\nHH:mm:ss"));
-            if (DateTime.Now.Hour >= 6 && DateTime.Now.Hour < 14) lbl_Shift.Text = "Shift 1";
-            else if (DateTime.Now.Hour >= 14 && DateTime.Now.Hour < 22) lbl_Shift.Text = "Shift 2";
-            else lbl_Shift.Text = "Shift 3";
+            //if (DateTime.Now.Hour >= 6 && DateTime.Now.Hour < 14) lbl_Shift.Text = "Shift 1";
+            //else if (DateTime.Now.Hour >= 14 && DateTime.Now.Hour < 22) lbl_Shift.Text = "Shift 2";
+            //else lbl_Shift.Text = "Shift 3";
         }
 
         private void lbl_plan_Click(object sender, EventArgs e)
@@ -1119,8 +1131,13 @@ namespace Smart_FTY
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Smart_FTY.ComVar._frm_home_dmp_dmc.Show();   
+            Smart_FTY.ComVar._frm_home_dmp_dmc.Show();
             this.Hide();
+        }
+
+        private void dtpDate_EditValueChanged(object sender, EventArgs e)
+        {
+            loaddata();
         }
 
         private void lblButton1_Click(object sender, EventArgs e)
@@ -1132,7 +1149,7 @@ namespace Smart_FTY
             //FORM_MOLD_ACTUAL_PLAN frm = new FORM_MOLD_ACTUAL_PLAN("DMC");
             //frm.Show();
             this.Hide();
-            
+
 
         }
 
@@ -1147,24 +1164,36 @@ namespace Smart_FTY
             this.Hide();
         }
 
-        private void FORM_MOLD_ACTUAL_PLAN_Shown(object sender, EventArgs e)
+        private void lbl_Shift_Click(object sender, EventArgs e)
         {
-            //Smart_FTY.ComVar._frmPro_MoldLayout_dmc.Hide();
-            //Smart_FTY.ComVar._frmPro_MoldLayout_dmp.Hide();
+            try
+            {
+                Control cmd = (Control)sender;
+                foreach (Control ctr in pnShift.Controls)
+                {
+                    if (!ctr.Name.Contains("lbl_Shift")) continue;
+                    if (ctr.Name == cmd.Name)
+                    {
+                        cmd.BackColor = Color.DodgerBlue;
+                        cmd.ForeColor = Color.White;
+                        _shift = cmd.Tag.ToString();
+                        if (!_isLoad)
+                        {
+                            loaddata();
+                        }
+                        _time = 0;
+                    }
+                    else
+                    {
+                        ctr.BackColor = Color.Gray;
+                        ctr.ForeColor = Color.White;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
     }
 }
