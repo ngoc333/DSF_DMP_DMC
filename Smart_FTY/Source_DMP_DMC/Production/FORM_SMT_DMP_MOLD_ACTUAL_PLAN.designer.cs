@@ -523,7 +523,7 @@
             this.axGrid.Location = new System.Drawing.Point(16, 209);
             this.axGrid.Name = "axGrid";
             this.axGrid.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axGrid.OcxState")));
-            this.axGrid.Size = new System.Drawing.Size(1893, 963);
+            this.axGrid.Size = new System.Drawing.Size(1893, 962);
             this.axGrid.TabIndex = 660;
             // 
             // FORM_SMT_DMP_MOLD_ACTUAL_PLAN
@@ -531,7 +531,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1920, 1062);
+            this.ClientSize = new System.Drawing.Size(1920, 1061);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.pnShift);
             this.Controls.Add(this.pn1);
