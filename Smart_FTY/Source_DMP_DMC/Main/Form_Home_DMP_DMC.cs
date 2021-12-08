@@ -57,10 +57,12 @@ namespace Smart_FTY
         public static FORM_LEADTIME_COMP_DMP _frmLeadTime = new FORM_LEADTIME_COMP_DMP();
         public static FORM_DMP_KPI_PERFOMANCE _frmKPI = new FORM_DMP_KPI_PERFOMANCE();
 
+        public static FRM_DMC_AGING_LOCATION_NEW _frmAging_Loc = new FRM_DMC_AGING_LOCATION_NEW();
+
+        // public static FRM_DMP_DMC_PROD_DAIYSHIFT _frmProd_Daily = new FRM_DMP_DMC_PROD_DAIYSHIFT();
+        public static FRM_DMP_DMC_PROD_DAILY _frmProd_Daily = new FRM_DMP_DMC_PROD_DAILY();
 
 
-       // public static FRM_DMP_DMC_PROD_DAIYSHIFT _frmProd_Daily = new FRM_DMP_DMC_PROD_DAIYSHIFT();
-         public static FRM_DMP_DMC_PROD_DAILY _frmProd_Daily = new FRM_DMP_DMC_PROD_DAILY();
 
         public static FORM_SMT_DMP_MOLD_ACTUAL_PLAN _frmPlanActual = new FORM_SMT_DMP_MOLD_ACTUAL_PLAN();
         public static FRM_SMT_BTS _frmBTS = new FRM_SMT_BTS();
@@ -776,7 +778,7 @@ namespace Smart_FTY
         private void cmdProduction1_Click(object sender, EventArgs e)
         {
 
-            Smart_FTY.ComVar._frmPro_MoldLayout_dmc.Show();
+            Smart_FTY.ComVar._frmPro_MoldLayout_dmc.Show();  
             this.Hide();
          
         }
@@ -793,8 +795,7 @@ namespace Smart_FTY
         private void simpleButton13_Click(object sender, EventArgs e)
         {
          
-            _frmInv.Show();
-       
+            _frmInv.Show();       
             //this.Hide();
         }
 
@@ -993,19 +994,10 @@ namespace Smart_FTY
             this.Hide();
         }
 
-       
-
-        
-
-        
-
-        
-
-        
-
-
-
-
-
+        private void cmdAging_Loc_Click(object sender, EventArgs e)
+        {
+            _frmAging_Loc.Show();
+            this.Hide();
+        }
     }
 }
